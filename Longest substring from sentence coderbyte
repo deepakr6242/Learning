@@ -1,0 +1,15 @@
+import re
+
+def clean_word(sen):
+  bag_of_words = sen.split()
+  dict_ = {}
+  for i in bag_of_words:
+    word1 = " ".join(re.findall("[a-zA-Z]+", i))
+    dict_[word1]=len(word1)
+  return dict_
+
+def LongestWord(sen):
+  dict_ = clean_word(sen)
+  return max(dict_)
+
+print(LongestWord(input()))
